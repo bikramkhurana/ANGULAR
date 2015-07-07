@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.siblings * { 
+    display: block;
+    border: 2px solid;
+    color: grey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("li.start").siblings().css({"color": "orange", "border": "4px solid yellow"});
+});
+</script>
+</head>
+<body>
+<div style="width:650px;" class="siblings">
+  <ul>
+    <li>This is Bikram</li>
+    <li>This is Ashok</li>
+    <li class="start">This is Neha</li>
+    <li>This is Vikram</li>
+    <li>This is Ruchi</li>
+  </ul>   
+</div>
+</body>
+</html>

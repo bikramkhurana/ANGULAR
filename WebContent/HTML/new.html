@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Task Tracker</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<!-- header -->
+			<h3>Task Tracker</h3>
+			<h5 class="footer">V2.0</h5>
+			<div class="alert alert-danger" id="alertDiv">
+				<strong>Error!</strong> Please Fill the highlighted filed
+			</div>
+		</div>
+		<!-- left side form to add new task -->
+		<div id="formDiv">
+			<h2>Create a Task</h2>
+			<form role="form">
+				<div class="form-group">
+					<label for="email">Add Task</label> <input type="text"
+						class="form-control" id="newTask">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Date</label> <input type="date"
+						class="form-control" id="taskDate">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Assigned To</label> <input type="text"
+						class="form-control" id="assignTo">
+				</div>
+				<button type="button" id="addTask" class="btn btn-default btn-lg"
+					value="submit">Submit</button>
+			</form>
+		</div>
+		<!-- table for existing tasks -->
+		<div id="existingTask">
+			<h2>Existing Task</h2>
+			<table class="table table-striped" id="taskTable">
+				<tbody id="tableBody">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

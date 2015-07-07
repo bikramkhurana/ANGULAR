@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<div data-ng-controller="myCtrl">
+<ul>
+<li data-ng-repeat="record in records">
+{{record.Name}}--{{record.City}}--{{record.Country}}
+</li>
+</ul>
+
+</div>
+
+
+<script>
+var app=angular.module("myApp",[]);
+app.controller("myCtrl",function($scope,$http)
+		{
+	/* $http.get("json/second.json").success(function(result)
+			{
+		$scope.records=result.records;
+			}); */
+			
+	$http({
+	    url: 'json/second.json',
+	    method: "POST",
+	    data: {'mes':"Hiii"},
+	    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+	}).success(function (data, status, headers, config) {
+		$scope.records=data.records; // how do pass this to $scope.persons?
+	    }).error(function (data, status, headers, config) {
+	       alert("error");
+	    });
+		});
+		
+
+</script>
+</body>
+</html>

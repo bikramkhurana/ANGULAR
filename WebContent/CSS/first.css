@@ -1,0 +1,22 @@
+.mainclass
+{
+height:300px;
+width: 430px;
+border:1px solid grey;
+margin-left: 10px;
+margin-bottom:10px;
+
+}
+.row {
+    margin-right: auto; 
+   margin-left: auto;
+border:2px solid grey;
+padding-left:20px;
+width:1380px;
+}
+ #hero
+{
+
+height:300px;
+border:2px solid darkgrey;
+} 
