@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"  data-ng-app="myapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="JS/first.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS/first.css">
+
+</head>
+<body data-ng-controller="firstCtrl">
+<div id="hero" class="row" >
+<div class="col-sm-12 " >
+<img data-ng-src="{{x.imageURLs.sm}}"><br/><br/>
+{{x.ProductInfo.p_product_description}}<br/><br/>
+
+{{x.ProductInfo.p_product_price| currency }}<br/>
+{{x.ProductInfo.p_product_specs.Value[30].Key}}
+
+			{{error}}
+		
+			</div>
+</div>
+<div class="row" id="productimages" >
+<div class="col-sm-3 mainclass"  data-ng-repeat="x in info">
+ <div data-ng-mouseover="hoveritem(x)"> Name:{{x.ProductInfo.Brand}}<br/>
+     <img data-ng-src=" {{x.imageURLs.sm}}"><br/>
+ Product Description:    {{x.ProductInfo.p_product_description}}<br/>
+ Product Price :{{x.ProductInfo.p_product_price}}<br/>
+ </div>
+ <div data-ng-hide="true">{{x.ProductInfo.p_product_specs.Value[30].Key}}</div>
+</div>
+</div>
+</body>
+</html>

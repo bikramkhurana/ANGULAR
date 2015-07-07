@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-controller='myctrl'>
+<search-result>
+</search-result>
+
+<script>
+var app= angular.module('myapp',[]);
+
+app.controller('myctrl', function($scope){
+	
+	$scope.customer=[{
+		firstname: neha,
+		lastname: deol
+	},
+	{
+	firstname: nrha1,
+	lastname: hksd
+	
+	}];
+});
+app.directive('searchResult', function($scope)
+		{
+	return
+	{
+		restict:'AE',
+		template: 'Name: {{customer.firstname}} lastname:{{customer.lastname}}'
+		
+	};
+		});
+		
+		
+
+</script>
+</body>
+</html>

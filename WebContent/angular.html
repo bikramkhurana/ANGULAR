@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-controller="myctrl" >
+<ul>
+<li ng-repeat="x in info">
+{{x.ProductInfo.Brand}}<br/>
+{{x.ProductInfo.p_product_specs.Value[0].Key}}
+</li>
+
+</ul>
+
+<script>
+var app= angular.module('myapp',[]);
+app.controller('myctrl', function($scope, $http)
+		{
+	$http.get("json/first.json").success(function(response)
+			{
+		$scope.info= response.ProductsList;
+			});
+		});
+		
+	
+
+
+</script>
+</body>
+</html>
